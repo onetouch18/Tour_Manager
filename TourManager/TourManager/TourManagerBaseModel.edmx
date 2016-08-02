@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище TourManagerModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdditionalServices">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Країна" Type="nvarchar(max)" />
+          <Property Name="Послуга" Type="nvarchar(max)" />
+          <Property Name="Ціна" Type="int" />
+          <Property Name="Назва туру" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ПІБ" Type="nvarchar(max)" />
+          <Property Name="Паспортні дані" Type="nvarchar(max)" />
+          <Property Name="Місто Проживання" Type="nvarchar(max)" />
+          <Property Name="Телефон" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Countries">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Код країни" Type="nvarchar(max)" />
+          <Property Name="Назва країни" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Requests">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ПІБ Клієнта" Type="nvarchar(max)" />
+          <Property Name="Країна" Type="nvarchar(max)" />
+          <Property Name="Додаткові послуги" Type="nvarchar(max)" />
+          <Property Name="Ціна" Type="int" />
+          <Property Name="Дата виїзду" Type="nvarchar(max)" />
+          <Property Name="Дата повернення" Type="nvarchar(max)" />
+          <Property Name="Тур" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Tours">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Країна" Type="nvarchar(max)" />
+          <Property Name="Назва туру" Type="nvarchar(max)" />
+          <Property Name="Ціна" Type="int" />
+        </EntityType>
+        <EntityContainer Name="Хранилище TourManagerModelContainer">
+          <EntitySet Name="AdditionalServices" EntityType="Self.AdditionalServices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Requests" EntityType="Self.Requests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tours" EntityType="Self.Tours" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TourManagerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdditionalServices">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Країна" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Послуга" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ціна" Type="Int32" />
+          <Property Name="Назва_туру" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ПІБ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Паспортні_дані" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Місто_Проживання" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Телефон" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Countries">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Код_країни" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Назва_країни" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Requests">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ПІБ_Клієнта" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Країна" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Додаткові_послуги" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ціна" Type="Int32" />
+          <Property Name="Дата_виїзду" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Дата_повернення" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Тур" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tours">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Країна" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Назва_туру" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ціна" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="TourManagerEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdditionalServices" EntityType="Self.AdditionalServices" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" />
+          <EntitySet Name="Countries" EntityType="Self.Countries" />
+          <EntitySet Name="Requests" EntityType="Self.Requests" />
+          <EntitySet Name="Tours" EntityType="Self.Tours" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище TourManagerModelContainer" CdmEntityContainer="TourManagerEntities">
+          <EntitySetMapping Name="AdditionalServices">
+            <EntityTypeMapping TypeName="TourManagerModel.AdditionalServices">
+              <MappingFragment StoreEntitySet="AdditionalServices">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Країна" ColumnName="Країна" />
+                <ScalarProperty Name="Послуга" ColumnName="Послуга" />
+                <ScalarProperty Name="Ціна" ColumnName="Ціна" />
+                <ScalarProperty Name="Назва_туру" ColumnName="Назва туру" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="TourManagerModel.Clients">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ПІБ" ColumnName="ПІБ" />
+                <ScalarProperty Name="Паспортні_дані" ColumnName="Паспортні дані" />
+                <ScalarProperty Name="Місто_Проживання" ColumnName="Місто Проживання" />
+                <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="TourManagerModel.Countries">
+              <MappingFragment StoreEntitySet="Countries">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Код_країни" ColumnName="Код країни" />
+                <ScalarProperty Name="Назва_країни" ColumnName="Назва країни" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Requests">
+            <EntityTypeMapping TypeName="TourManagerModel.Requests">
+              <MappingFragment StoreEntitySet="Requests">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ПІБ_Клієнта" ColumnName="ПІБ Клієнта" />
+                <ScalarProperty Name="Країна" ColumnName="Країна" />
+                <ScalarProperty Name="Додаткові_послуги" ColumnName="Додаткові послуги" />
+                <ScalarProperty Name="Ціна" ColumnName="Ціна" />
+                <ScalarProperty Name="Дата_виїзду" ColumnName="Дата виїзду" />
+                <ScalarProperty Name="Дата_повернення" ColumnName="Дата повернення" />
+                <ScalarProperty Name="Тур" ColumnName="Тур" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tours">
+            <EntityTypeMapping TypeName="TourManagerModel.Tours">
+              <MappingFragment StoreEntitySet="Tours">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Країна" ColumnName="Країна" />
+                <ScalarProperty Name="Назва_туру" ColumnName="Назва туру" />
+                <ScalarProperty Name="Ціна" ColumnName="Ціна" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

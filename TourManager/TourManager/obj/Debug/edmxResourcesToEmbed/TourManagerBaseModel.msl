@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище TourManagerModelContainer" CdmEntityContainer="TourManagerEntities">
+    <EntitySetMapping Name="AdditionalServices">
+      <EntityTypeMapping TypeName="TourManagerModel.AdditionalServices">
+        <MappingFragment StoreEntitySet="AdditionalServices">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Країна" ColumnName="Країна" />
+          <ScalarProperty Name="Послуга" ColumnName="Послуга" />
+          <ScalarProperty Name="Ціна" ColumnName="Ціна" />
+          <ScalarProperty Name="Назва_туру" ColumnName="Назва туру" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="TourManagerModel.Clients">
+        <MappingFragment StoreEntitySet="Clients">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ПІБ" ColumnName="ПІБ" />
+          <ScalarProperty Name="Паспортні_дані" ColumnName="Паспортні дані" />
+          <ScalarProperty Name="Місто_Проживання" ColumnName="Місто Проживання" />
+          <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="TourManagerModel.Countries">
+        <MappingFragment StoreEntitySet="Countries">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Код_країни" ColumnName="Код країни" />
+          <ScalarProperty Name="Назва_країни" ColumnName="Назва країни" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requests">
+      <EntityTypeMapping TypeName="TourManagerModel.Requests">
+        <MappingFragment StoreEntitySet="Requests">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ПІБ_Клієнта" ColumnName="ПІБ Клієнта" />
+          <ScalarProperty Name="Країна" ColumnName="Країна" />
+          <ScalarProperty Name="Додаткові_послуги" ColumnName="Додаткові послуги" />
+          <ScalarProperty Name="Ціна" ColumnName="Ціна" />
+          <ScalarProperty Name="Дата_виїзду" ColumnName="Дата виїзду" />
+          <ScalarProperty Name="Дата_повернення" ColumnName="Дата повернення" />
+          <ScalarProperty Name="Тур" ColumnName="Тур" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tours">
+      <EntityTypeMapping TypeName="TourManagerModel.Tours">
+        <MappingFragment StoreEntitySet="Tours">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Країна" ColumnName="Країна" />
+          <ScalarProperty Name="Назва_туру" ColumnName="Назва туру" />
+          <ScalarProperty Name="Ціна" ColumnName="Ціна" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

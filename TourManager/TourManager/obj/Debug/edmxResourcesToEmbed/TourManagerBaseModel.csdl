@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TourManagerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AdditionalServices">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Країна" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Послуга" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ціна" Type="Int32" />
+    <Property Name="Назва_туру" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ПІБ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Паспортні_дані" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Місто_Проживання" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Телефон" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Countries">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Код_країни" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Назва_країни" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Requests">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ПІБ_Клієнта" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Країна" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Додаткові_послуги" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ціна" Type="Int32" />
+    <Property Name="Дата_виїзду" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Дата_повернення" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Тур" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tours">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Країна" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Назва_туру" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ціна" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="TourManagerEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AdditionalServices" EntityType="Self.AdditionalServices" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" />
+    <EntitySet Name="Countries" EntityType="Self.Countries" />
+    <EntitySet Name="Requests" EntityType="Self.Requests" />
+    <EntitySet Name="Tours" EntityType="Self.Tours" />
+  </EntityContainer>
+</Schema>
